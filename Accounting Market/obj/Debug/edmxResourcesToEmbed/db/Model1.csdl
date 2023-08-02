@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="billSales" Relationship="SalesModel.FK_billSales_Customer" FromRole="Customer" ToRole="billSale" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="SalesModel.FK_product_Category" FromRole="product" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Suppler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="SalesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="Supplers" EntityType="Self.Suppler" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <FunctionImport Name="SelectQuery" ReturnType="Collection(SalesModel.SelectQuery_Result)" />
+    <EntitySet Name="Categories" EntityType="SalesModel.Category" />
+    <AssociationSet Name="FK_product_Category" Association="SalesModel.FK_product_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <EntitySet Name="billSales" EntityType="SalesModel.billSale" />
+    <EntitySet Name="billSalesDetails" EntityType="SalesModel.billSalesDetail" />
+    <EntitySet Name="sysdiagrams" EntityType="SalesModel.sysdiagram" />
+    <AssociationSet Name="FK_billSales_Customer" Association="SalesModel.FK_billSales_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="billSale" EntitySet="billSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_billSalesDetails_billSales" Association="SalesModel.FK_billSalesDetails_billSales">
+      <End Role="billSale" EntitySet="billSales" />
+      <End Role="billSalesDetail" EntitySet="billSalesDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="SelectQuery_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Image" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameCate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="products" Relationship="SalesModel.FK_product_Category" FromRole="Category" ToRole="product" />
+  </EntityType>
+  <Association Name="FK_product_Category">
+    <End Type="SalesModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="SalesModel.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="billSale">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustormerId" Type="Int32" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Customer" Relationship="SalesModel.FK_billSales_Customer" FromRole="billSale" ToRole="Customer" />
+    <NavigationProperty Name="billSalesDetails" Relationship="SalesModel.FK_billSalesDetails_billSales" FromRole="billSale" ToRole="billSalesDetail" />
+  </EntityType>
+  <EntityType Name="billSalesDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="BillSalesId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="Totalprice" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="billSale" Relationship="SalesModel.FK_billSalesDetails_billSales" FromRole="billSalesDetail" ToRole="billSale" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_billSales_Customer">
+    <End Type="SalesModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="SalesModel.billSale" Role="billSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="billSale">
+        <PropertyRef Name="CustormerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_billSalesDetails_billSales">
+    <End Type="SalesModel.billSale" Role="billSale" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SalesModel.billSalesDetail" Role="billSalesDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="billSale">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="billSalesDetail">
+        <PropertyRef Name="BillSalesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

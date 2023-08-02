@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db8986163cb946499ae9d6c2a79ac554" Name="Diagram1">
+        <EntityTypeShape EntityType="SalesModel.Customer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModel.product" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModel.Suppler" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModel.User" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesModel.Category" Width="1.5" PointX="3.375" PointY="4.75" />
+        <AssociationConnector Association="SalesModel.FK_product_Category" />
+        <EntityTypeShape EntityType="SalesModel.billSale" Width="1.5" PointX="3" PointY="8" />
+        <EntityTypeShape EntityType="SalesModel.billSalesDetail" Width="1.5" PointX="5.25" PointY="8" />
+        <EntityTypeShape EntityType="SalesModel.sysdiagram" Width="1.5" PointX="5.375" PointY="4.75" />
+        <AssociationConnector Association="SalesModel.FK_billSales_Customer" />
+        <AssociationConnector Association="SalesModel.FK_billSalesDetails_billSales" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

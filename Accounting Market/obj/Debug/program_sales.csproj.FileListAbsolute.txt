@@ -1,0 +1,29 @@
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe.config
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.exe
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.pdb
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.pdb
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\EntityFramework.dll
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\EntityFramework.xml
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\program_sales.csprojResolveAssemblyReference.cache
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.user.resources
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.Properties.Resources.resources
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.users.new_user.resources
+C:\Users\yosef\documents\visual studio 2012\Projects\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\program_sales.csproj.GenerateResource.Cache
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe.config
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.exe
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.pdb
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.pdb
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\EntityFramework.dll
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\bin\Debug\EntityFramework.xml
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.user.resources
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.Properties.Resources.resources
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\program_sales.csproj.GenerateResource.Cache
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.main_Form.resources
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.screens.update_product.resources
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.screens.update_users.resources
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.NewCustomer.resources
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.NewSupplers.resources
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.BillForm.resources
+D:\ملفات\WindowsFormsApplication5\WindowsFormsApplication5\obj\Debug\program_sales.csprojResolveAssemblyReference.cache
